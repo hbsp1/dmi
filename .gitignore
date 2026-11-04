@@ -5,3 +5,5 @@
 /logs
 /src/mappings
 /src/models
+**/mappings
+**/models
