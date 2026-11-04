@@ -1,7 +1,33 @@
-dmi/
-├──
-│
-└──
+    '''
+    ETL setup and process:
+    1. Setup config.yaml
+        dir: /dmi/src/database/config.yaml
+
+        example:
+            db_config:
+            name: dmi_db
+            user: postgres
+            password: 1234
+            host: localhost
+            port: 5433 
+
+    3. Setup database:
+        3.1 Run docker from terminal:
+            docker run --name postgres_dmi -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=dmi_db -p 5433:5432 -d postgres
+        
+        3.2 Run def create_db_schema(conn_str)
+            dir: /dmi/src/database/init_postgres_docker.py
+
+    4. Run main.py
+
+1. Create py project environment
+    python -m venv .venv
+
+2. Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass (let PS run scripts)
+
+3. .\.venv\Scripts\Activate.ps1
+
+4. pip install pandas openpyxl psycopg[binary] pyyaml requests
 
 
 
